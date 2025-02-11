@@ -406,6 +406,7 @@ body {
     color: #ddd;
     text-align: center;
 }
+
 /* ================================
    Section Contact
 =============================== */
@@ -417,37 +418,47 @@ body {
 
 #contact h2 {
     font-family: 'Bodoni Moda', serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 40px; /* Espacement sous le titre */
 }
 
+/* Conteneur des icônes */
 .contact-icons {
-    display: flex;                /* Utilisation de Flexbox pour aligner horizontalement */
-    justify-content: center;      /* Centre les éléments horizontalement */
-    gap: 30px;                    /* Espacement entre les éléments */
-    flex-wrap: wrap;              /* Permet aux éléments de se réorganiser en ligne suivante si nécessaire */
-    align-items: center;          /* Aligne verticalement les éléments */
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+    gap: 60px; /* Espacement entre chaque élément */
 }
 
+/* Bloc contenant chaque icône + texte */
 .contact-item {
-    display: flex;                /* Utilisation de Flexbox pour aligner l'icône et le texte */
-    flex-direction: column;       /* Les éléments (icône + texte) seront dans une colonne */
-    justify-content: center;      /* Centrage vertical des éléments dans chaque bloc */
-    align-items: center;          /* Centrer les éléments horizontalement dans chaque bloc */
-    text-decoration: none;        /* Enlève les soulignements des liens */
-    color: white;                 /* Texte en blanc */
+    display: flex;
+    flex-direction: row; /* Affichage en ligne */
+    align-items: center; /* Alignement vertical */
+    justify-content: center; /* Centre chaque bloc */
+    text-decoration: none;
+    color: white;
+    gap: 15px; /* Espace entre l'icône et le texte */
 }
 
+/* Icônes */
 .contact-item img {
-    width: 40px;                  /* Taille des icônes */
-    margin-bottom: 10px;          /* Marge entre l'icône et le texte */
+    width: 50px; /* Taille ajustée */
 }
 
+/* Texte à côté de l'icône */
 .contact-item p {
-    margin: 0;                    /* Enlève les marges par défaut */
-    font-size: 1.2rem;            /* Taille du texte */
+    font-size: 1.3rem;
+    line-height: 1.4;
+    text-align: center; /* Centre le texte */
+    margin: 0;
 }
+
+
+
+
+
 
 
 
