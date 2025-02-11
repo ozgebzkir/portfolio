@@ -347,26 +347,26 @@ body {
 }
 
 .container {
-    width: 85%;  /* J'ai augmenté un peu la largeur pour compenser la réduction des marges */
+    width: 85%;  /* Augmente un peu la largeur pour compenser la réduction des marges */
     margin: 20px auto;
     text-align: center;
-    display: grid;
-    grid-template-rows: auto auto; /* 2 lignes distinctes : une pour les images et une pour les vidéos */
-    gap: 30px; /* Réduction de l'espacement entre les lignes */
+    display: flex;
+    flex-direction: column; /* Disposition en colonnes : d'abord images, puis vidéos */
+    gap: 30px; /* Espace entre la ligne des images et des vidéos */
 }
 
 /* Première ligne : Images */
 .image-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 images par ligne */
-    gap: 15px; /* Réduction de l'écart entre les images */
+    display: flex; /* Aligne les éléments horizontalement */
+    justify-content: space-between; /* Espaces égaux entre les éléments */
+    gap: 15px; /* Espace entre les images */
 }
 
 /* Deuxième ligne : Vidéos */
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 vidéos par ligne */
-    gap: 15px; /* Réduction de l'écart entre les vidéos */
+    display: flex; /* Aligne les éléments horizontalement */
+    justify-content: space-between; /* Espaces égaux entre les vidéos */
+    gap: 15px; /* Espace entre les vidéos */
 }
 
 /* Style de chaque projet (image ou vidéo) */
@@ -375,6 +375,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     overflow: hidden; /* Cache les débordements */
+    flex-basis: 48%; /* Largeur des éléments (2 vidéos = 48% chacune) */
 }
 
 /* Conteneur pour maintenir un ratio 16:9 pour les vidéos et images */
@@ -382,14 +383,14 @@ body {
     position: relative;
     width: 100%;   /* Largeur du conteneur */
     height: 0;
-    padding-bottom: 56.25%;  /* 16:9 (n'est pas à changer si tu veux garder ce ratio) */
+    padding-bottom: 56.25%;  /* Ratio 16:9 (n'est pas à changer si tu veux garder ce ratio) */
     background: #222;
     overflow: hidden;
     border-radius: 8px;
 }
 
 /* Les images et vidéos à l'intérieur du conteneur */
-.project .image-container img, .project .image-container video {
+.project .image-container img, .project .image-container video, .project .image-container iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -405,33 +406,49 @@ body {
     color: #ddd;
     text-align: center;
 }
+/* ================================
+   Section Contact
+=============================== */
+#contact {
+    padding: 50px 20px;
+    background-color: #222;
+    text-align: center;
+}
+
+#contact h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 20px;
+}
 
 .contact-icons {
-    display: flex; /* Aligne en ligne */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    gap: 50px; /* Espace entre chaque élément */
-    flex-wrap: wrap; /* Évite le débordement sur petits écrans */
+    display: flex;                /* Utilisation de Flexbox pour aligner horizontalement */
+    justify-content: center;      /* Centre les éléments horizontalement */
+    gap: 30px;                    /* Espacement entre les éléments */
+    flex-wrap: wrap;              /* Permet aux éléments de se réorganiser en ligne suivante si nécessaire */
+    align-items: center;          /* Aligne verticalement les éléments */
 }
 
-.contact-icons a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    gap: 10px; /* Espace entre l'icône et le texte */
+.contact-item {
+    display: flex;                /* Utilisation de Flexbox pour aligner l'icône et le texte */
+    flex-direction: column;       /* Les éléments (icône + texte) seront dans une colonne */
+    justify-content: center;      /* Centrage vertical des éléments dans chaque bloc */
+    align-items: center;          /* Centrer les éléments horizontalement dans chaque bloc */
+    text-decoration: none;        /* Enlève les soulignements des liens */
+    color: white;                 /* Texte en blanc */
 }
 
-.contact-icons img {
-    width: 40px;
-    height: auto;
+.contact-item img {
+    width: 40px;                  /* Taille des icônes */
+    margin-bottom: 10px;          /* Marge entre l'icône et le texte */
 }
 
-.contact-icons p {
-    margin: 0;
-    font-size: 18px; /* Ajuste la taille du texte */
-    white-space: nowrap; /* Empêche le retour à la ligne */
+.contact-item p {
+    margin: 0;                    /* Enlève les marges par défaut */
+    font-size: 1.2rem;            /* Taille du texte */
 }
+
 
 
 
