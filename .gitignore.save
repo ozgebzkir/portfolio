@@ -1,0 +1,19 @@
+*.mp4
+*.avi
+*.mov
+*.jpg
+*.png
+*.gif
+*.zip
+*.tar
+*.tar.gz
+git rm --cached *.mp4
+git rm --cached *.avi
+git rm --cached *.mov
+git rm --cached *.jpg
+git rm --cached *.png
+git rm --cached *.gif
+git rm --cached *.zip
+git rm --cached *.tar
+git rm --cached *.tar.gz
+
